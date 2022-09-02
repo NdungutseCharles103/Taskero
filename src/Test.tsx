@@ -17,7 +17,7 @@ export default function Card({ isDragging, text }: any) {
     []
   )
   return (
-    <div className='w-[300px] h-[200px] bg-blue-500' ref={dragRef} style={{ opacity }}>
+    <div className='w-[300px] cursor-grab h-[200px] bg-blue-500' ref={dragRef} style={{ opacity }}>
       {text}
     </div>
   )

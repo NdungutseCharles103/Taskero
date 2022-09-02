@@ -2,8 +2,8 @@ export type Theme = {
     primary: string;
     secondary: string;
     tertiary: string;
-    quaternary: string;
-    quinary: string;
+    text: string;
+    t1: string;
     senary: string;
     septenary: string;
 }
@@ -28,17 +28,17 @@ export const appDefaultValues: appContextType = {
         primary: "#1e1e1e",
         secondary: "#f2f2f2",
         tertiary: "#f2f2f2",
-        quaternary: "#f2f2f2",
-        quinary: "#f2f2f2",
+        text: "#ffffff",
+        t1: "#6e757c",
         senary: "#f2f2f2",
         septenary: "#f2f2f2",
     },
     lightTheme: {
-        primary: "#f2f2f2",
-        secondary: "#1e1e1e",
-        tertiary: "#1e1e1e",
-        quaternary: "#1e1e1e",
-        quinary: "#1e1e1e",
+        primary: "#f7f7f7",
+        secondary: "#ffffff",
+        tertiary: "#058179",
+        text: "#000",
+        t1: "#6e757c",
         senary: "#1e1e1e",
         septenary: "#1e1e1e",
     },
@@ -46,8 +46,8 @@ export const appDefaultValues: appContextType = {
         primary: "",
         secondary: "",
         tertiary: "",
-        quaternary: "",
-        quinary: "",
+        text: "",
+        t1: "",
         senary: "",
         septenary: ""
     },

@@ -1,14 +1,22 @@
 import { useState } from 'react'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+// import { useApp } from './contexts/AppContext'
+import DashBoard from './pages/DashBoard'
 import Card from './Test'
 
 function App() {
 
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <div className="text-bold text-4xl">Welcome To Taskero</div>
-      {/* <Card /> */}
-    </div>
+    <DndProvider  backend={HTML5Backend} >
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<DashBoard />} />
+        </Routes>
+      </BrowserRouter>
+    </DndProvider>
   )
 }
 
