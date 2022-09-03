@@ -6,7 +6,7 @@ const Tasks = () => {
     const { theme } = useApp()
 
   return (
-    <div className={`h-screen flex p-2 bg-{${theme.primary}] text-[${theme.text}]`}>
+    <div className={`h-screen flex p-2 ${theme.bg} text-[${theme.text}]`}>
         <SideBar />
     </div>
   )
