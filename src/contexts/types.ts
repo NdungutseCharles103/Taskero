@@ -36,7 +36,7 @@ export const appDefaultValues: appContextType = {
     lightTheme: {
         bg: "bg-[#f7f7f7]",
         bg1: "bg-[#ffffff]",
-        main: "#058179",
+        main: "bg-[#058179]",
         text: "text-[#000]",
         t1: "text-[#6e757c]",
         senary: "#1e1e1e",

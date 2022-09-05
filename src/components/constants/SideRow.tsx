@@ -19,7 +19,7 @@ const SideRow = ({icon, name, note, tw, show}: Props) => {
         <>
 				{icon}
         </>
-				<p className={`ml-2 duration-500 hidden tab:flex ${show &&'flex'}`}>{name}</p>
+				<p className={`ml-2 duration-500 hidden tab:flex ${show ?'flex':'tab:hidden'}`}>{name}</p>
 			</div>
       {note}
 		</div>
