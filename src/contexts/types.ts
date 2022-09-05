@@ -37,7 +37,7 @@ export const appDefaultValues: appContextType = {
         bg: "bg-[#f7f7f7]",
         bg1: "bg-[#ffffff]",
         main: "#058179",
-        text: "#000",
+        text: "text-[#000]",
         t1: "text-[#6e757c]",
         senary: "#1e1e1e",
         septenary: "#1e1e1e",

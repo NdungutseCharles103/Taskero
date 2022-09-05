@@ -6,6 +6,17 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      'xs': '280px',
+      'sm': '320px',
+      'msm': '380px',
+      'phone': '450px',
+      'five': '500px',
+      'tab': '640px',
+      'ltab': '780px',
+      'xtab': '960px',
+      'desktop': '1280px'
+    }
   },
   plugins: [],
 }
