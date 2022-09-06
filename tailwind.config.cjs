@@ -12,7 +12,7 @@ module.exports = {
       'msm': '380px',
       'phone': '450px',
       'five': '500px',
-      'tab': '640px',
+      'tab': '960px',
       'ltab': '780px',
       'xtab': '960px',
       'desktop': '1280px'

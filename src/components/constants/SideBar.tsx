@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useApp } from '../../contexts/AppContext'
 import { BiAnalyse, BiCalendar, BiChevronDown, BiGridAlt, BiGroup, BiInfoCircle, BiLogOut, BiMenu, BiTag, BiTask, BiUser } from 'react-icons/bi'
 import SideRow from './SideRow'
@@ -7,6 +7,25 @@ import { FaTag } from 'react-icons/fa'
 const SideBar = () => {
     const { theme } = useApp()
     const [ show, setShow ] = useState(false)
+
+    if(typeof window !== undefined){
+      // window.onscroll(()=> {
+      window.addEventListener('resize', ()=> {
+        const width = window.innerWidth
+        if(width > 960)
+           setShow(true)
+        else 
+          setShow(false)   
+      })
+      // })
+    }
+
+    useEffect(()=> {
+      if(typeof window !== undefined){
+        const width = window.innerWidth
+        if(width > 960) setShow(true);
+      }
+    },[])
     
   return (
     <div className={`${theme.t1} ${theme.bg} durat00 tab:w-[220px] tab:max-w-[220px] ${show ? 'w-[170px] h-screen tab:h-full absolute tab:static py-3 tab:py-0 top-0 left-0':'tab:w-auto'} text-sm justify-between flex flex-col`} >
