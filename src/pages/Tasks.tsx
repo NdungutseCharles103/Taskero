@@ -8,8 +8,8 @@ const Tasks = () => {
 
 	return (
 		<div className={`h-screen flex py-3 pr-3 ${theme.bg} text-[${theme.text}]`}>
-			<SideBar />
-			<div className={`flex h-full overflow-auto w-full rounded-lg py-3 flex-col px-2 ${theme.bg1}`}>
+			<SideBar active="tasks" />
+			<div className={`flex h-full overflow-auto w-full rounded-lg pb-3 flex-col px-2 ${theme.bg1}`}>
 				<MainTaskComp />
 			</div>
 		</div>

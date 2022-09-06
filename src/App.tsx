@@ -15,7 +15,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<DashBoard />} />
+          <Route path='/dashboard' element={<DashBoard />} />
+          <Route path='/activity' element={<DashBoard />} />
           <Route path='/tasks' element={<Tasks />} />
+          <Route path='/myprofile' element={<Tasks />} />
+          <Route path='/calendar' element={<Tasks />} />
+          <Route path='/teams' element={<Tasks />} />
+          <Route path='/helpcenter' element={<Tasks />} />
         </Routes>
       </BrowserRouter>
     </DndProvider>

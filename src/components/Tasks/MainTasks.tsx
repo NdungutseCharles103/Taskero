@@ -7,7 +7,7 @@ const MainTasks = () => {
     const { theme } = useApp()
 
   return (
-    <div className={`main grid letab:grid-cols-3 five:grid-cols-2 gap-[3%] w-full ${theme.t1}`}>
+    <div className={`main grid ltab:grid-cols-3 five:grid-cols-2 gap-[3%] w-full ${theme.t1}`}>
         <TaskArea tasks={[2, 32]} name="To Do"  />
         <TaskArea tasks={[2, 32, 4, 4]} name="In Progress"  />
         <TaskArea tasks={[2, 32, 4]} name="In Review"  />

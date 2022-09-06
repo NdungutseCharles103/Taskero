@@ -6,15 +6,15 @@ import MainTasks from './MainTasks';
 const MainTaskComp = () => {
     const { theme } = useApp();
   return (
-    <div className='flex flex-col w-full'>
-        <div className="flex items-center five:flex-row flex-col justify-between">
+    <div className='flex flex-col bg-inherit w-full'>
+        <div className="flex z-[5] five:sticky top-0 pt-3 bg-inherit items-center five:flex-row flex-col justify-between">
             <h1 className='font-semibold'>Team tasks</h1>
             <div className="text-sm five:flex-row flex-col flex items-center">
                 <div className={`${theme.bg} rounded-md py-2 px-3 flex items-center`}>
                     <BiSearch />
-                    <input className='outline-none ml-2 bg-transparent' placeholder='Search' type="text" />
+                    <input className='outline-none min-w- ml-2 bg-transparent' placeholder='Search' type="text" />
                 </div>
-                <button className={`flex text-white items-center py-1 rounded-lg ml-4 px-4 ${theme.main}`}>
+                <button className={`flex mx-auto five:mt-0 mt-2  text-white items-center py-1 rounded-lg five:ml-4 px-4 ${theme.main}`}>
                     <span className='text-lg'>+</span>
                     <span className='ml-1'>Create task</span>
                 </button>
