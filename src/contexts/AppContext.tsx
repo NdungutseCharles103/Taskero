@@ -10,6 +10,7 @@ export const AppProvider = ({ children }:{ children: ReactNode }) => {
     const [darkTheme, setDarkTheme] = useState(appDefaultValues.darkTheme);
     const [lightTheme, setLightTheme] = useState(appDefaultValues.lightTheme);
     const [theme, setTheme] = useState<Theme>(lightTheme);
+    const [ show, setShow ] = useState(false)
 
     const toggleTheme = () => {
         setIsDark(!isDark);
@@ -17,7 +18,7 @@ export const AppProvider = ({ children }:{ children: ReactNode }) => {
     }
 
     return (
-        <AppContext.Provider value={{ theme, toggleTheme, isDark, setIsDark, setTheme, setDarkTheme, setLightTheme, darkTheme, lightTheme }}>
+        <AppContext.Provider value={{ theme, toggleTheme, show, setShow, isDark, setIsDark, setTheme, setDarkTheme, setLightTheme, darkTheme, lightTheme }}>
             {children}
         </AppContext.Provider>
     );

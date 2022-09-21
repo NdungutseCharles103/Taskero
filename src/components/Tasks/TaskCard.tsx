@@ -1,12 +1,24 @@
 import React from 'react'
+import { useDrag } from 'react-dnd'
 import { BiDotsHorizontalRounded, BiLink } from 'react-icons/bi'
 import { FaTag } from 'react-icons/fa'
 import { useApp } from '../../contexts/AppContext'
 
-const TaskCard = () => {
+type Props = {
+    task: any
+}
+
+const TaskCard = ({task}: Props) => {
     const { theme } = useApp()
+    const [{ isDragging }, drag] = useDrag(()=> ({
+        type:"task",
+        item: task,
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        })
+    }))
   return (
-    <div className={`${theme.bg1} rounded-lg cursor-grab text-sm px-2 py-3 flex flex-col`}>
+    <div ref={drag} className={`${theme.bg1} ${isDragging && 'bg-blue-600'} rounded-lg cursor-grab text-sm px-2 py-3 flex flex-col`}>
         <div className="flex items-center justify-between">
             <p className={`${theme.text} font-semibold`}>Layout Design</p>
             <BiDotsHorizontalRounded className='text-xl' />

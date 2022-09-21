@@ -9,8 +9,7 @@ type SProps = {
 }
 
 const SideBar = ({active}: SProps) => {
-    const { theme } = useApp()
-    const [ show, setShow ] = useState(false)
+    const { theme, show, setShow } = useApp()
 
     if(typeof window !== undefined){
       // window.onscroll(()=> {

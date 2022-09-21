@@ -18,7 +18,7 @@ const SideRow = ({icon, name, note, tw, show, shade}: Props) => {
   const isLink = shade !== null
 
 	return (
-    <Link to={`${isLink ? `/${name.toLowerCase().split(' ').join('')}`:''}`}>
+    <Link className="mt-2" to={`${isLink ? `/${name.toLowerCase().split(' ').join('')}`:''}`}>
 		  <div title={name} className={`flex font-semibold px-3 py-2 rounded-md hover:bg-[#e2eeed] hover:text-green-800 cursor-pointer justify-between items-center ${tw} ${shade && 'bg-[#e2eeed] text-green-800'}`}>
 		  	<div className="flex items-center">
           <>

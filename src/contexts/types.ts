@@ -1,3 +1,5 @@
+import React from "react";
+
 export type Theme = {
     bg: string;
     bg1: string;
@@ -18,6 +20,8 @@ export interface appContextType {
     setTheme: (theme: Theme) => void;
     setDarkTheme: (theme: Theme) => void;
     setLightTheme: (theme: Theme) => void;
+    show: boolean,
+    setShow: React.Dispatch<boolean>
 }
 
 export const appDefaultValues: appContextType = {
@@ -59,5 +63,7 @@ export const appDefaultValues: appContextType = {
     },
     setLightTheme: function (theme: Theme): void {
         throw new Error("Function not implemented.");
-    }
+    },
+    show: false,
+    setShow: ()=> {}
 }
