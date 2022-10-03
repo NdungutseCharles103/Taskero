@@ -8,5 +8,6 @@
 
 
 ::-webkit-scrollbar-thumb{
-    background-color: aquamarine;
+    background-color: #058179;
+    border-radius: 10px;
 }

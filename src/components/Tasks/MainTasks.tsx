@@ -1,98 +1,72 @@
-import { AnyArray } from 'immer/dist/internal'
-import React, { useEffect, useState } from 'react'
-import { useDrop } from 'react-dnd'
-import { BiDotsHorizontalRounded } from 'react-icons/bi'
-import { useApp } from '../../contexts/AppContext'
-import { activities } from '../constants/data'
-import TaskCard from './TaskCard'
+import React, { useEffect, useState } from "react";
+import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { useApp } from "../../contexts/AppContext";
+import { activities } from "../constants/data";
+import { addToList, removeFromList, taskTypes } from "../utils";
+import TaskArea from "./TaskArea";
 
 const MainTasks = () => {
-    const { theme } = useApp()
-    const [ toBeDone, setToBeDone] = useState<any>([])
-    const [ inProgress, setInProgress ] = useState<any>([])
-    const [ inReview, setInReview ] = useState<any>([])
+	const { theme } = useApp();
+	const [tasks, setTasks] = useState<any>({tobedone: [], inprogress: [], done: []});
 
-    useEffect(()=>{
-        console.log(toBeDone);
-    },[toBeDone])
+	const handleDrop = function (result: DropResult) {
+		console.log(result);
+		const {
+			destination,
+			source: { droppableId, index },
+		} = result;
+		if (!destination) {
+			return;
+		}
 
-    const handleDrop = (task: any)=> {
-        switch (task.state) {
-            case "tobedone":
-                const filtered = toBeDone.filter((tobe: any)=> tobe.id !== task.id)
-                setToBeDone(filtered)
-                break;
-            case "inreview":
-                setInReview(inReview.filter((tobe: any)=> tobe.id !== task.id))
-                break;
-            case "inprogress":
-                setInProgress(inProgress.filter((tobe: any)=> tobe.id !== task.id))
-                break;
-        
-            default:
-                break;
-        }
-        const filtered = toBeDone.filter((tobe: any)=> tobe.id !== task.id)
-        const arr = Object.assign(toBeDone, filtered)
-        console.log(arr, filtered);
-    }
+		const listCopy = { ...tasks };
 
-   useEffect(() => {
-    const toBeDone = activities.filter((act: any)=> act.state === 'tobedone')
-    const inReview = activities.filter((act: any)=> act.state === 'inreview')
-    const inProgress = activities.filter((act: any)=> act.state === 'inprogress')
+		const sourceList = listCopy[droppableId];
+		const [removedElement, newSourceList] = removeFromList(
+			sourceList,
+			index
+		);
+		listCopy[result.source.droppableId] = newSourceList;
 
-    setToBeDone(toBeDone);
-    setInProgress(inProgress);
-    setInReview(inReview)
-   }, [])
-    
+		const destinationList = listCopy[destination.droppableId];
+        removedElement.state = destination.droppableId
 
-  return (
-    <div className={`main grid ltab:grid-cols-3 five:grid-cols-2 gap-[3%] w-full ${theme.t1}`}>
-        <TaskArea handleDrop={handleDrop} tasks={toBeDone} name="To Do"  />
-        <TaskArea handleDrop={handleDrop} tasks={inProgress} name="In Progress"  />
-        <TaskArea handleDrop={handleDrop} tasks={inReview} name="In Review"  />
-    </div>
-  )
-}
+		listCopy[destination.droppableId] = addToList(
+			destinationList,
+			removedElement
+		);
 
-export default MainTasks
+        setTasks(listCopy)
+	};
 
-type AProps = {
-    tasks: object[] | any[],
-    name: string,
-    dropRef?: any,
-    handleDrop: any
-}
+	useEffect(() => {
+		const toBeDone = activities.filter((act: any) => act.state === "tobedone");
+		const done = activities.filter((act: any) => act.state === "done");
+		const inProgress = activities.filter(
+			(act: any) => act.state === "inprogress"
+		);
+		const tasks = { tobedone: toBeDone, inprogress: inProgress, done: done };
+		setTasks(tasks);
+        console.log(tasks);
+	}, []);
 
-const TaskArea = ({tasks, name, dropRef, handleDrop}: AProps) => {
-    const { theme } = useApp()
-    
-    const [{ isOver }, drop] = useDrop(()=> ({
-        accept: "task",
-        drop: (task: any) => {
-          handleDrop(task)  
-        },
-        collect: (monitor)=> ({
-            isOver: !!monitor.isOver()
-        })
-    }))
+	return (
+		<DragDropContext onDragEnd={handleDrop}>
+			<div
+				className={`main grid ltab:grid-cols-3 five:grid-cols-2 gap-[3%] w-full ${theme.t1}`}
+			>
+				{taskTypes.map((type: any, i: number) => (
+					<TaskArea
+                        key={i}
+						handleDrop={handleDrop}
+						tasks={tasks[type.sort]}
+						name={type.name}
+						prefix={type.sort}
+					/>
+				))}
+			</div>
+		</DragDropContext>
+	);
+};
 
-    return(
-        <div ref={drop} className={`${theme.bg} ${isOver && 'bg-[#e2eeed]'} gap-3 h-fi rounded-lg flex flex-col p-2`}>
-            <div className="flex items-center justify-between">
-                <p className='text-sm font-semibold'><span className={`${theme.text}`}>{name}</span>
-                    <span className='ml-2'>{tasks.length}</span>
-                </p>
-                <div className="text-xl flex items-center">
-                    <p className='cursor-pointer'>+</p>
-                    <BiDotsHorizontalRounded className='ml-3 cursor-pointer' />
-                </div>
-            </div>
-            {tasks.map((task: any, i: number)=> (
-                <TaskCard key={i} task={task} />
-            ))}
-        </div>
-    )
-}
+export default MainTasks;

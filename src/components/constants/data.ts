@@ -9,15 +9,15 @@ export const activities = [
     },
     {
         id: 2,
-        state: "inreview"
+        state: "done"
     },
     {
         id: 4,
-        state: "inreview"
+        state: "done"
     },
     {
         id: 5,
-        state: "inreview"
+        state: "done"
     },
     {
         id: 3,
