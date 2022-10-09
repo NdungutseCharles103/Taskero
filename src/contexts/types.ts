@@ -8,6 +8,7 @@ export type Theme = {
     t1: string;
     senary: string;
     septenary: string;
+    border: string;
 }
 
 export interface appContextType {
@@ -36,6 +37,7 @@ export const appDefaultValues: appContextType = {
         t1: "#6e757c",
         senary: "#f2f2f2",
         septenary: "#f2f2f2",
+        border: "#f2f2f2"
     },
     lightTheme: {
         bg: "bg-[#f7f7f7]",
@@ -45,6 +47,7 @@ export const appDefaultValues: appContextType = {
         t1: "text-[#6e757c]",
         senary: "#1e1e1e",
         septenary: "#1e1e1e",
+        border: 'border-[#f7f7f7]'
     },
     theme: {
         bg: "",
@@ -53,7 +56,8 @@ export const appDefaultValues: appContextType = {
         text: "",
         t1: "",
         senary: "",
-        septenary: ""
+        septenary: "",
+        border: ""
     },
     setTheme: function (theme: Theme): void {
         throw new Error("Function not implemented.");

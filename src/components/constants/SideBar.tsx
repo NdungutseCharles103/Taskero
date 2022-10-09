@@ -15,10 +15,7 @@ const SideBar = ({active}: SProps) => {
       // window.onscroll(()=> {
       window.addEventListener('resize', ()=> {
         const width = window.innerWidth
-        if(width > 960)
-           setShow(true)
-        else 
-          setShow(false)   
+        if(width < 960) setShow(false)
       })
       // })
     }
@@ -26,12 +23,12 @@ const SideBar = ({active}: SProps) => {
     useEffect(()=> {
       if(typeof window !== undefined){
         const width = window.innerWidth
-        if(width > 960) setShow(true);
+        if(width < 960) setShow(false);
       }
     },[])
     
   return (
-    <div className={`${theme.t1} ${theme.bg} z-10 durat00 tab:w-[220px] tab:max-w-[220px] ${show ? 'w-[170px] h-screen tab:h-full absolute tab:static py-3 tab:py-0 top-0 left-0':'tab:w-auto'} text-sm justify-between flex flex-col`} >
+    <div className={`${theme.t1} py-3 ${theme.bg1} pl-1 border-r-[1px] border-slate-100 z-10 durat00 tab:w-[220px] tab:max-w-[220px] ${show ? 'w-[170px] h-screen tab:h-full absolute tab:static py-3 tab:py-0 top-0 left-0':'tab:w-auto'} text-sm justify-between flex flex-col`} >
         <div className="flex w-full flex-col h-full">
             <div className={`flex px-3 items-center`}>
               <BiMenu onClick={()=> setShow(!show)} className={`mx-2 ml-0 text-2xl cursor-pointer tab:hiden ${!show && 'mr-0'}`} />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { useApp } from "../../contexts/AppContext";
 import { activities } from "../constants/data";
@@ -39,7 +39,7 @@ const MainTasks = () => {
         setTasks(listCopy)
 	};
 
-	useEffect(() => {
+	useMemo(() => {
 		const toBeDone = activities.filter((act: any) => act.state === "tobedone");
 		const done = activities.filter((act: any) => act.state === "done");
 		const inProgress = activities.filter(

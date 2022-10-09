@@ -13,7 +13,7 @@ type AProps = {
     prefix: string;
 };
 
-const TaskArea = ({ tasks, name, dropRef, handleDrop, prefix }: AProps) => {
+const TaskArea = ({ tasks, name, prefix }: AProps) => {
 	const { theme } = useApp();
     
 	useEffect(() => {
