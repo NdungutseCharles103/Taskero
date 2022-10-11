@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import { pageType } from './contexts/types'
+import { pages } from './pages'
 // import { useApp } from './contexts/AppContext'
 import DashBoard from './pages/DashBoard'
-import Tasks from './pages/Tasks'
-import Card from './Test'
 
 function App() {
 
@@ -15,13 +15,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<DashBoard />} />
-          <Route path='/dashboard' element={<DashBoard />} />
-          <Route path='/activity' element={<DashBoard />} />
-          <Route path='/tasks' element={<Tasks />} />
-          <Route path='/myprofile' element={<Tasks />} />
-          <Route path='/calendar' element={<Tasks />} />
-          <Route path='/teams' element={<Tasks />} />
-          <Route path='/helpcenter' element={<Tasks />} />
+          {pages.map((page: pageType)=>(
+            <Route key={page.id} path={page.url} element={page.component as React.ReactNode} />
+          ))}
         </Routes>
       </BrowserRouter>
     </DndProvider>

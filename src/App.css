@@ -11,3 +11,6 @@
     background-color: #058179;
     border-radius: 10px;
 }
+body{
+    overflow-x: hidden;
+}

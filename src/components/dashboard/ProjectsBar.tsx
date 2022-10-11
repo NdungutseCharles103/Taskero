@@ -15,16 +15,18 @@ const ProjectsBar = () => {
 				>
 					<BiSearch />
 					<input
-						className="w-[100px] bg-transparent ml-2 outline-none text-sm"
+						className="w-full bg-transparent ml-2 outline-none text-sm"
 						type="text"
 						placeholder="Search"
 					/>
 				</div>
 				<ProjectGroup />
 			</div>
-            <div className={`${theme.bg} px-4 py-2 rounded-md text-sm font-semibold items-center justify-center flex cursor-pointer`}>
-                + New Project
-            </div>
+			<div
+				className={`${theme.bg} duration-300 px-4 py-2 rounded-md text-sm font-semibold items-center justify-center flex cursor-pointer hover:bg-[#e2eeed]`}
+			>
+				+ New Project
+			</div>
 		</div>
 	);
 }

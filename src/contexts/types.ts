@@ -71,3 +71,10 @@ export const appDefaultValues: appContextType = {
     show: false,
     setShow: ()=> {}
 }
+
+export interface pageType {
+    id: number;
+    name: string;
+    url: string;
+    component: React.ReactNode;
+}
