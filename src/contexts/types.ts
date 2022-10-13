@@ -6,6 +6,7 @@ export type Theme = {
     main: string;
     text: string;
     t1: string;
+    tc: string;
     senary: string;
     septenary: string;
     border: string;
@@ -35,9 +36,10 @@ export const appDefaultValues: appContextType = {
         main: "#f2f2f2",
         text: "#ffffff",
         t1: "#6e757c",
+        tc: 'text-[#058179]',
         senary: "#f2f2f2",
         septenary: "#f2f2f2",
-        border: "#f2f2f2"
+        border: "#f2f2f2",
     },
     lightTheme: {
         bg: "bg-[#f7f7f7]",
@@ -45,6 +47,7 @@ export const appDefaultValues: appContextType = {
         main: "bg-[#058179]",
         text: "text-[#000]",
         t1: "text-[#6e757c]",
+        tc: 'text-[#058179]',
         senary: "#1e1e1e",
         septenary: "#1e1e1e",
         border: 'border-[#f7f7f7]'
@@ -55,6 +58,7 @@ export const appDefaultValues: appContextType = {
         main: "",
         text: "",
         t1: "",
+        tc: '',
         senary: "",
         septenary: "",
         border: ""

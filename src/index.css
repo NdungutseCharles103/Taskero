@@ -2,9 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+}
+
+.btnstarted::after {
+  position: absolute;
+  content: ' ';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #23c6bb;
+  transition: all 0.35s;
+  border-radius: 1.5rem;
+  z-index: 0;
+}
+
+.btnstarted:hover{
+  color: white;
+}
+.btnstarted:hover:after {
+  width: 100%;
 }
