@@ -5,6 +5,7 @@ import {
 	BiRightArrow,
 	BiRightArrowAlt,
 } from "react-icons/bi";
+import { usedBy } from "../../components/constants/data";
 import LandLayout from "../../components/Landing/LandLayout";
 import LandNav from "../../components/Landing/LandNav";
 import { useApp } from "../../contexts/AppContext";
@@ -28,7 +29,7 @@ const Landing = () => {
 						</p>
 						<div className="flex items-center mt-4">
 							<button
-								className={`px-4 py-2 ${theme.main} relative btnstarted text-white rounded-3xl ml-6 overflow-hidden`}
+								className={`px-4 py-2 ${theme.main} relative btnstarted text-white rounded-3xl ml-2 overflow-hidden`}
 							>
 								<span className="flex w-full h-full relative items-center z-[2]">
 									Get Started
@@ -45,7 +46,23 @@ const Landing = () => {
 						</div>
 					</div>
 				</div>
-				<img src="/images/takphone.png" alt="" />
+				<div
+					className={`flex text-white ${theme.main} rounded-xl w-full relative mt-[20vh] p-11`}
+				>
+					<div className="flex flex-col w-1/2">
+						<p className="text-lg">Used by over 10,000 people and teams</p>
+						<div className="grid grid-cols-3 gap-3 mt-5 gap-y-11">
+							{usedBy.map((use: any) => (
+								<img className="max-w-[100px]" src={use.image} alt="" />
+							))}
+						</div>
+					</div>
+					<img
+						className="w-[300px] tab:w-[500px] absolute right-0 -top-1/2"
+						src="/images/takphone.png"
+						alt=""
+					/>
+				</div>
 			</div>
 		</LandLayout>
 	);

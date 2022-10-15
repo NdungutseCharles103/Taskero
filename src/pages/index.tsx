@@ -1,13 +1,12 @@
 import { useRouter } from 'next/router';
 import React from 'react'
+import DashBoard from './dashboard';
 
 const Home = () => {
 	const router = useRouter();
     console.log(router);
     
-  return (
-    <div className='bg-red-600'>Home:</div>
-  )
+  return <DashBoard />
 }
 
 export default Home
