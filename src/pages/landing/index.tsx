@@ -6,6 +6,9 @@ import {
 	BiRightArrowAlt,
 } from "react-icons/bi";
 import { usedBy } from "../../components/constants/data";
+import About from "../../components/Landing/About";
+import Blog from "../../components/Landing/Blog";
+import Features from "../../components/Landing/Features";
 import LandLayout from "../../components/Landing/LandLayout";
 import LandNav from "../../components/Landing/LandNav";
 import { useApp } from "../../contexts/AppContext";
@@ -14,7 +17,7 @@ const Landing = () => {
 	const { theme } = useApp();
 	return (
 		<LandLayout>
-			<div className="flex bg flex-col w-full items-center">
+			<div className="flex bg flex-col w-full items-center  px-[3%]">
 				<div className="flex w-full items-center pt-[15vh]">
 					<div className="w-1/2 flex px-5">
 						<p className="text-[3.5em] font-bold">
@@ -51,18 +54,21 @@ const Landing = () => {
 				>
 					<div className="flex flex-col w-1/2">
 						<p className="text-lg">Used by over 10,000 people and teams</p>
-						<div className="grid grid-cols-3 gap-3 mt-5 gap-y-11">
+						<div className="grid grid-cols-3 gap-3 mt-11 gap-y-11">
 							{usedBy.map((use: any) => (
 								<img className="max-w-[100px]" src={use.image} alt="" />
 							))}
 						</div>
 					</div>
 					<img
-						className="w-[300px] tab:w-[500px] absolute right-0 -top-1/2"
+						className="w-[300px] tab:w-[600px] absolute right-0 bottom-0"
 						src="/images/takphone.png"
 						alt=""
 					/>
 				</div>
+				<Features />
+				<Blog />
+				<About />
 			</div>
 		</LandLayout>
 	);

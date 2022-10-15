@@ -8,7 +8,7 @@ const LandLayout: React.FC<{ children: React.ReactNode }> = ({ children }: { chi
 	return (
 		<MainLayout>
 			<div
-				className={`flex w-full min-h-screen flex-col bg-[#f6fafe] ${theme.text} px-[3%]`}
+				className={`flex w-full min-h-screen flex-col bg-[#f6fafe] ${theme.text}`}
 			>
 				<LandNav />
 				{children}

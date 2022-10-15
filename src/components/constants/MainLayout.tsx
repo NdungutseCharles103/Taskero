@@ -1,11 +1,16 @@
 import Head from "next/head";
 import React from "react";
 
-const MainLayout = ({ children } : { children: React.ReactNode}) => {
+export type LayoutProps = {
+	children: React.ReactNode;
+	title?: string;
+}
+
+const MainLayout = ({ children, title } : LayoutProps) => {
 	return (
 		<>
 			<Head>
-				<title>Taskero</title>
+				<title>{title??'Taskero'}</title>
 			</Head>
             {children}
 		</>

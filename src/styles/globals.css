@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 .flex {
     display: flex !important;
@@ -20,6 +21,11 @@
 ::-webkit-scrollbar-thumb {
     background-color: #058179;
     border-radius: 10px;
+}
+
+.features::-webkit-scrollbar{
+    /* height: 0; */
+    display: none;
 }
 
 body {
