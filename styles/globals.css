@@ -1,0 +1,58 @@
+@import url('https: //fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.flex {
+    display: flex !important;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #058179;
+    border-radius: 10px;
+}
+
+body {
+    overflow-x: hidden;
+}
+.btnstarted::after {
+    position: absolute;
+    content: ' ';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #23c6bb;
+    transition: all 0.35s;
+    border-radius: 1.5rem;
+    z-index: 0;
+}
+
+.btnstarted:hover {
+    color: white;
+}
+
+.btnstarted:hover:after {
+    width: 100%;
+}
+
+.bg {
+    /* background: linear-gradient(135deg, #f6fafe 3.2em, transparent 3.2em) -50px 0,
+    linear-gradient(225deg, #f6fafe 3.2em, transparent 3.2em) -50px 0,
+    linear-gradient(315deg, #f6fafe 3.2em, transparent 3.2em),
+    linear-gradient(45deg, #f6fafe 3.2em, transparent 3.2em);
+    background-size: 100px 100px;
+    background-color: #059f86; */
+    /* background-color: #059f86;
+  clip-path: polygon(30% 0%, 70% 50%, 90% 10%, 0% 50%); */
+}
