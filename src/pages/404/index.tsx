@@ -9,7 +9,7 @@ const NotFound = () => {
         <img className='max-w-[400px] w-11/12' src="/images/404.gif" alt="" />
         <h1 className='text-lg text-center font-semibold'>It looks like page you are looking for doesn't exist or the link may have been broken</h1>
         <Link href={`/`}>
-            <button className={`${theme.main} text-white px-5 py-2 mt-5`}>Go to Hompage</button>
+            <button className={`${theme.main} text-white px-5 py-2 mt-5 rounded-lg`}>Go to Homepage</button>
         </Link>
     </div>
   )

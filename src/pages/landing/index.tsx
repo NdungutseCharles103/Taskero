@@ -21,8 +21,8 @@ const Landing = () => {
 				<div className="flex w-full items-center pt-[15vh]">
 					<div className="w-1/2 flex px-5">
 						<p className="text-[3.5em] font-bold">
-							Manage your own and team task easily with{" "}
-							<span className={`${theme.tc}`}>Taskero</span>{" "}
+							Manage your own and team task easily with
+							<span className={`${theme.tc}`}>Taskero</span>
 						</p>
 					</div>
 					<div className="flex flex-col w-1/2">
