@@ -4,7 +4,7 @@ import { useApp } from '../../contexts/AppContext'
 const Blog = () => {
     const { theme } = useApp()
   return (
-		<div className="w-full items-center flex flex-col mt-11">
+		<div id='blog' className="w-full items-center flex flex-col mt-11">
 			<h2
 				className={`text-2xl ${theme.tc} text-center flex flex-col font-bold`}
 			>

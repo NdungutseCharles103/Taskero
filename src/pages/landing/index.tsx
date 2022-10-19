@@ -8,7 +8,9 @@ import {
 import { usedBy } from "../../components/constants/data";
 import About from "../../components/Landing/About";
 import Blog from "../../components/Landing/Blog";
+import Download from "../../components/Landing/Download";
 import Features from "../../components/Landing/Features";
+import Footer from "../../components/Landing/Footer";
 import LandLayout from "../../components/Landing/LandLayout";
 import LandNav from "../../components/Landing/LandNav";
 import { useApp } from "../../contexts/AppContext";
@@ -69,7 +71,9 @@ const Landing = () => {
 				<Features />
 				<Blog />
 				<About />
+				<Download />
 			</div>
+			<Footer />
 		</LandLayout>
 	);
 };
