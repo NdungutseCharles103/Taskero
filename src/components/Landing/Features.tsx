@@ -59,7 +59,7 @@ const Features = () => {
 					<BiChevronRight className="text-3xl" />
 				</button>
 				{features.map((feature) => (
-					<Feature active={active === feature.id} {...feature} />
+					<Feature key={feature.id} active={active === feature.id} {...feature} />
 				))}
 			</div>
 		</div>

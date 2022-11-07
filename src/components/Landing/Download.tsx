@@ -12,9 +12,9 @@ const Download = () => {
 					simplify
 				</p>
 				<div className="flex items-center mt-[5vh]">
-					<img className="w-[160px]" src="images/appstore.png" alt="" />
+					<img className="w-[160px] cursor-pointer" src="images/appstore.png" alt="" />
 					<img
-						className="w-[200px]"
+						className="w-[200px] cursor-pointer ml-2"
 						src="images/google-play-badge.png"
 						alt=""
 					/>
