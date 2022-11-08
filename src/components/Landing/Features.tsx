@@ -84,7 +84,7 @@ const Feature: React.FC<FProps> = ({ active, title, desc, icon }) => {
 					active && "text-white"
 				} flex-col rounded-3xl justify-between p-4 items-center ${
 					active && theme.main
-				} w-[300px] hover:bg-[#058179] duration-300 cursor-pointer`}
+				} w-[300px] hover:bg-[#058179] hover:text-white duration-300 cursor-pointer`}
 			>
 				<div className="w-full flex flex-col">
 					<div className="mx-auto">{icon}</div>
@@ -92,9 +92,7 @@ const Feature: React.FC<FProps> = ({ active, title, desc, icon }) => {
 				</div>
 				<p className="text-center mt-2 text-sm">{desc}</p>
 				<button
-					className={`px-4 mt-2 py-2 ${
-						active ? "text-white" : theme.tc
-					} overflow-hidden duration-300 btnstarted relative rounded-3xl ml-6 flex items-center
+					className={`px-4 mt-2 py-2 bg-white ${theme.tc} overflow-hidden duration-300 btnstarted relative rounded-3xl ml-6 flex items-center
 							`}
 				>
 					<span className="flex w-full h-full relative items-center z-[2] text-sm">

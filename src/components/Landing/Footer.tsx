@@ -11,10 +11,10 @@ import CopyRights from "./CopyRights";
 const Footer = () => {
 	return (
 		<div className="w-full flex flex-col items-center bg-[#dae2eb]">
-			<div className="flex w-full justify-between px-20 py-10">
-				<div className="flex flex-col">
+			<div className="ltab:flex w-full grid five:grid-cols-2 justify-between xtab:px-20 phone:px-4 px-2 py-10 gap-5">
+				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
 					<img className="w-[150px]" src="logoq.png" alt="" />
-					<p className="mt-4">
+					<p className="ltab:mt-4 mt-1">
 						Simplify your work with us. Need to know more about us? contact us.
 					</p>
 					<div className="flex items-center tablet:ml-4">
@@ -67,39 +67,39 @@ const Footer = () => {
 						</a>
 					</div>
 				</div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-semibold">Company</h1>
-					<a className="mt-4" href="#">
+				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
+					<h1 className="ltab:text-xl font-semibold">Company</h1>
+					<a className="ltab:mt-4 mt-1" href="#">
 						About
 					</a>
-					<a className="mt-4" href="#">
+					<a className="ltab:mt-4 mt-1" href="#">
 						Contact
 					</a>
-					<a className="mt-4" href="#">
+					<a className="ltab:mt-4 mt-1" href="#">
 						Blog
 					</a>
-					<a className="mt-4" href="#">
+					<a className="ltab:mt-4 mt-1" href="#">
 						Blog
 					</a>
 				</div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-semibold">Information</h1>
-					<a className="mt-4" href="#">
+				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
+					<h1 className="ltab:text-xl font-semibold">Information</h1>
+					<a className="ltab:mt-4 mt-1" href="#">
 						About
 					</a>
-					<a className="mt-4" href="#">
+					<a className="ltab:mt-4 mt-1" href="#">
 						Contact
 					</a>
-					<a className="mt-4" href="#">
+					<a className="ltab:mt-4 mt-1" href="#">
 						Blog
 					</a>
-					<a className="mt-4" href="#">
+					<a className="ltab:mt-4 mt-1" href="#">
 						Blog
 					</a>
 				</div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-semibold">Join our Mailing list</h1>
-					<p className="mt-4">Get the latest news and updates</p>
+				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
+					<h1 className="ltab:text-xl font-semibold">Join our Mailing list</h1>
+					<p className="ltab:mt-4 mt-1">Get the latest news and updates</p>
 					<div className="flex mt-4 rounded-[3.5em] bg-white px-3 py-1 text-sm">
 						<input
 							className="w-full border-none outline-none "

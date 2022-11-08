@@ -12,9 +12,10 @@ const LandNav = () => {
 			<div className={`flex px-3 items-center`}>
 				<img className={`w-[100px] flex`} src="logoq.png" alt="" />
 			</div>
+			{show && <div onClick={()=> setShow(false)} className="z-10 top-0 left-0 bottom-0 right-0 fixed"></div>}
 			<div
 				onClick={() => setShow(!show)}
-				className="flex flex-col z-50 gap-y-1 cursor-pointer"
+				className="flex flex-col z-50 gap-y-1 cursor-pointer ltab:hidden"
 			>
 				<span
 					className={`w-[25px] ${
@@ -34,7 +35,7 @@ const LandNav = () => {
 				></span>
 			</div>
 			<div
-				className={`flex ltab:flex-row py-3 ltab:py-0 gap-y-4 items-center ltab:static absolute left-0 right-0 flex-col ${
+				className={`flex z-40 ltab:flex-row py-3 ltab:py-0 gap-y-4 items-center ltab:static absolute left-0 right-0 flex-col ${
 					show ? "top-0" : "-top-[1000px]"
 				} duration-500 bg-white backdrop-blur-lg bg-opacity-50`}
 			>

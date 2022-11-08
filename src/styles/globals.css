@@ -10,9 +10,6 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth !important;
 }
-.flex {
-    display: flex !important;
-}
 
 ::-webkit-scrollbar {
     width: 7px;
