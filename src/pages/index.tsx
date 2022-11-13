@@ -1,12 +1,8 @@
-import { useRouter } from 'next/router';
 import React from 'react'
-import DashBoard from './dashboard';
+import Landing from './landing';
 
 const Home = () => {
-	const router = useRouter();
-    console.log(router);
-    
-  return <DashBoard />
+  return <Landing />
 }
 
 export default Home

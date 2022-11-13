@@ -10,7 +10,7 @@ const MainLayout = ({ children, title } : LayoutProps) => {
 	return (
 		<>
 			<Head>
-				<link rel="shortcut icon" href="ico.png" type="image/x-icon" />
+				<link rel="shortcut icon" href="/ico.png" type="image/x-icon" />
 				<title>{title??'Taskero'}</title>
 			</Head>
             {children}

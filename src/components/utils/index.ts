@@ -15,3 +15,20 @@ export const taskTypes = [
     {name: "In Progress", sort: "inprogress"},
     {name: "Done", sort: "done"}
 ]
+
+export const allowedPaths = [
+    "/",
+    "/auth/login",
+    "/auth/register",
+    "/auth/forgot-password",
+    "/auth/reset-password",
+    "/auth/verify-email",
+    "/auth/verify-email-success",
+    "/auth/verify-email-failure",
+    "/auth/verify-email-resent",
+    "/auth/verify-email-resent-failure",
+    "/auth/verify-email-resent-success",
+    "/landing",
+    "/landing/coming-soon",
+    "/auth/signup",
+];

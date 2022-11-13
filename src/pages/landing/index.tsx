@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
 	BiArrowFromRight,
@@ -22,7 +23,10 @@ const Landing = () => {
 		<LandLayout>
 			<div className="flex bg flex-col w-full items-center  px-[3%]">
 				<div className="flex w-full items-center pt-[15vh] xtab:flex-row flex-col">
-					<Pattern className="absolute -top-[1000px] left-0" stroke={"#058179"} />
+					<Pattern
+						className="absolute -top-[1000px] left-0"
+						stroke={"#058179"}
+					/>
 					<div className="xtab:w-1/2 flex px-5">
 						<p className="xtab:text-[3.5em] text-4xl font-bold text-center xtab:text-start ltab:leading-[1.3em] leading-[1em]">
 							Manage your own and team task easily with
@@ -38,9 +42,11 @@ const Landing = () => {
 							<button
 								className={`px-4 py-2 ${theme.main} relative btnstarted text-white rounded-3xl ml-2 overflow-hidden`}
 							>
-								<span className="flex w-full h-full relative items-center z-[2]">
-									Get Started
-								</span>
+								<Link href={`/auth/signup`}>
+									<span className="flex w-full h-full relative items-center z-[2]">
+										Get Started
+									</span>
+								</Link>
 							</button>
 							<button
 								className={`px-4 py-2 ${theme.tc} phone:mt-0 mt-4 overflow-hidden duration-300 btnstarted relative rounded-3xl phone:ml-6 flex items-center
@@ -59,8 +65,9 @@ const Landing = () => {
 					<div className="flex flex-col ltab:w-1/2 w-full">
 						<p className="text-lg">Used by over 10,000 people and teams</p>
 						<div className="grid phone:grid-cols-3 grid-cols-2 gap-3 mt-11 gap-y-11">
-							{usedBy.map((use: any) => (
+							{usedBy.map((use: any, i: number) => (
 								<img
+									key={i}
 									className="phone:max-w-[100px] max-w-[70px]"
 									src={use.image}
 									alt=""
